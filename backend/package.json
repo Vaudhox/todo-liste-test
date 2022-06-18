@@ -3,14 +3,32 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start:dev": "nodemon -L ./bin/www"
+    "start": "ts-node main.ts",
+    "start:dev": "nodemon --watch './**/*.ts' --exec 'ts-node main.ts'",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --d src/config/ormconfig.ts",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:run": "npm run typeorm migration:run",
+    "typeorm:create": "npm run typeorm migration:create -- -n"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.1",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.6"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.0.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "tsconfig-paths": "^4.0.0",
+    "tsup": "^6.1.2",
+    "typescript": "^4.7.4"
   }
 }

@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import "./App.css";
+import Layout from "./containers/layout";
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 function App() {
+  const { i18n } = useTranslation();
+  const lang = useSelector((state) => state.app.language);
+  //const rememberMe = useSelector((state) => state.user.remember_me);
+  //const dispatch = useDispatch()
+
+  useEffect(()=> {
+    i18n.changeLanguage(lang);//Init language
+
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout />
   );
 }
 

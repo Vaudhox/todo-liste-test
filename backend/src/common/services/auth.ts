@@ -6,6 +6,7 @@ import { LoginDto } from "../../users/dto/login.dto";
 import * as bcrypt from "bcryptjs";
 import { configService } from '../../config/config.service';
 import { UserAuthDto } from "../../users/dto/response/userAuth.dto";
+import { ServerError } from "../../config/server-errors";
 
 export class AuthService {
 
@@ -22,7 +23,7 @@ export class AuthService {
     async validateUser(payload: DeepPartial<UserEntity> ): Promise<UserEntity> {
         const user = await this.usersService.findOneBy({email: payload.email});
         if (!user) {
-            throw {message: "Unauthorize"}
+            throw new ServerError('Unauthorize', 401)
         }
         return user;
     }
@@ -43,7 +44,7 @@ export class AuthService {
                 emailConfirm: user.emailConfirm
             };
         }
-        throw {message: "Unauthorize"}
+        throw new ServerError('Unauthorize', 401)
     }
 
     async refresh(refreshToken: string): Promise<UserAuthDto> {
@@ -64,7 +65,7 @@ export class AuthService {
                 emailConfirm: user.emailConfirm
             };
         }
-        throw {message: "Unauthorize"}
+        throw new ServerError('Unauthorize', 401)
     }
 
     async createToken(user: UserEntity): Promise<any> {

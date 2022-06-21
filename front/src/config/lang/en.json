@@ -1,0 +1,21 @@
+{
+  "common": {
+    "translate-button": "EN",
+    "error404": "Error 404 you will be redirect in ",
+    "submit": "submit",
+    "error": "an error has occurred"
+  },
+  "user": {
+    "email": "email",
+    "firstname": "first name",
+    "lastname": "last name"
+  },
+  "auth": {
+    "email-already-use": "email already use",
+    "not-a-email": "you need to provide a valide email",
+    "password": "password",
+    "please-enter-input": "Please input your ",
+    "remember-me": "Remember me",
+    "unauthorized": "Please verify your data"
+  }
+}

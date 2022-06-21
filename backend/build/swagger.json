@@ -278,44 +278,6 @@
 				}
 			}
 		},
-		"/users": {
-			"get": {
-				"operationId": "All",
-				"responses": {
-					"200": {
-						"description": "",
-						"content": {
-							"application/json": {
-								"schema": {
-									"items": {
-										"$ref": "#/components/schemas/UserDataDto"
-									},
-									"type": "array"
-								},
-								"examples": {
-									"Example 1": {
-										"value": [
-											{
-												"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
-												"email": "test",
-												"emailConfirm": false,
-												"firstName": "azea",
-												"lastName": "azaza"
-											}
-										]
-									}
-								}
-							}
-						}
-					}
-				},
-				"tags": [
-					"User"
-				],
-				"security": [],
-				"parameters": []
-			}
-		},
 		"/register": {
 			"post": {
 				"operationId": "Create",
@@ -453,25 +415,6 @@
 						}
 					}
 				}
-			}
-		},
-		"/iam": {
-			"get": {
-				"operationId": "Iam",
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"tags": [
-					"User"
-				],
-				"security": [
-					{
-						"bearerAuth": []
-					}
-				],
-				"parameters": []
 			}
 		}
 	},

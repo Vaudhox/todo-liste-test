@@ -27,6 +27,7 @@ import { AskCheckEmailDto } from "../dto/askCheckEmail.dto"
 import { LoginDto } from "../dto/login.dto";
 import { AuthService } from "../../common/services/auth";
 import { UserAuthDto } from "../dto/response/userAuth.dto";
+import { ServerError } from "../../config/server-errors";
 
 @Route("/")
 @Tags('User')
@@ -41,7 +42,7 @@ export class UserController extends Controller {
         this.authService = new AuthService(this.userRepository)
     }
    
-    @Get("users")
+  /*  @Get("users")
     @SuccessResponse("200") // Custom success response
     @Example<UserDataDto[]>([{
         id: "46638910-ae86-42be-bc6e-b5bc8ae76592",
@@ -56,7 +57,7 @@ export class UserController extends Controller {
         return usersDto; 
     }
 
-    
+    */
     @Post("/register")
     @SuccessResponse("201", "Created") // Custom success response
     @Example<UserDataDto>({
@@ -81,8 +82,7 @@ export class UserController extends Controller {
             await sendEmailCheckEmail(userCreate)
             return userMapperToUserData(userCreate)
         } catch (error) {
-            this.setStatus(400)
-            return
+            throw new ServerError('Bad params', 400)
         }
      
     }
@@ -90,45 +90,34 @@ export class UserController extends Controller {
     @Post("/checkEmail")
     @SuccessResponse("200", "Email verify") // Custom success response
     async checkEmail( @Body() checkEmail: CheckEmailDto) {
-        try {
-            const user = await this.userRepository.findOneBy({id: checkEmail.id});
-            if (user && user.tokenCheckYourEmail && user.tokenCheckYourEmail===checkEmail.token) {
-                user.emailConfirm = true
-                user.tokenCheckYourEmail = null
-                user.emailCheckYourEmailAt = null
-                await this.userRepository.save(user);
-                this.setStatus(200)
-                return
-            } else {
-                this.setStatus(401)
-                return
-            }
-        } catch (error) {
-            this.setStatus(401)
+        const user = await this.userRepository.findOneBy({id: checkEmail.id});
+        if (user && user.tokenCheckYourEmail && user.tokenCheckYourEmail===checkEmail.token) {
+            user.emailConfirm = true
+            user.tokenCheckYourEmail = null
+            user.emailCheckYourEmailAt = null
+            await this.userRepository.save(user);
+            this.setStatus(200)
             return
+        } else {
+            throw new ServerError('Unauthorize', 401)
         }
+
     }
 
     @Post("/askCheckEmail")
     @SuccessResponse("200", "Email send") // Custom success response
     async askCheckEmail( @Body() askcheckEmail: AskCheckEmailDto) {
-        try {
-            const user = await this.userRepository.findOneBy({email: askcheckEmail.email});
-            if (user && user.tokenCheckYourEmail && !user.emailConfirm) {
-                var token = uuid4(); 
-                user.tokenCheckYourEmail = token
-                user.emailCheckYourEmailAt = new Date()
-                const userUpdate: UserEntity = await this.userRepository.save(user);
-                await sendEmailCheckEmail(userUpdate)
-                this.setStatus(200)
-                return
-            } else {
-                this.setStatus(401)
-                return
-            }
-        } catch (error) {
-            this.setStatus(401)
+        const user = await this.userRepository.findOneBy({email: askcheckEmail.email});
+        if (user && user.tokenCheckYourEmail && !user.emailConfirm) {
+            var token = uuid4(); 
+            user.tokenCheckYourEmail = token
+            user.emailCheckYourEmailAt = new Date()
+            const userUpdate: UserEntity = await this.userRepository.save(user);
+            await sendEmailCheckEmail(userUpdate)
+            this.setStatus(200)
             return
+        } else {
+            throw new ServerError('Unauthorize', 401)
         }
     }
     
@@ -145,24 +134,16 @@ export class UserController extends Controller {
         expireToken: "zeazeazea"
       })
     async login(@Body() loginDto: LoginDto): Promise<UserAuthDto> {
-        try {
-            const userAuthDto:UserAuthDto =  await this.authService.login(loginDto)
-            return userAuthDto
-        } catch (error) {
-            if (error.message === "Unauthorize") {
-                this.setStatus(401)
-            } else {
-                this.setStatus(400)
-            }
-            return
-        }
+        const userAuthDto:UserAuthDto =  await this.authService.login(loginDto)
+        return userAuthDto
     }
 
-
+/*
     @Get("/iam")
     @Security("bearerAuth")
    async iam(@Request() request: any) {
         console.log("USER ", request?.user || null)
     return
    }
+   */
 }

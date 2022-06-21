@@ -5,6 +5,8 @@ import * as logger from "morgan";
 import { RegisterRoutes } from "./build/routes";
 import * as bodyParser from "body-parser";
 import * as swaggerUi from "swagger-ui-express";
+import { ValidateError } from "tsoa";
+import * as cors from 'cors'
 
 var app = express();
 app.use(logger('dev'));
@@ -12,9 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use( bodyParser.json() );
-
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors())
 RegisterRoutes(app);
 
 /**
@@ -30,5 +31,17 @@ function startSwagger(): void {
 }
 
 startSwagger();
+
+app.use((err: any, _req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const status = err.status || 500;
+  const body: any = {
+    fields: err.fields || undefined,
+    message: err.message || 'An error occurred during the request.',
+    name: err.name,
+    status
+  };
+  res.status(status).json(body);
+  next();
+});
 
 export default app;

@@ -11,10 +11,8 @@ export function expressAuthentication(
     const token = request.headers["Authorization"]  as string || request.headers["authorization"] as string;
 
     return new Promise((resolve, reject) => {
-      if (!token && token.split(' ').length > 1 && token.includes('Beare')) {
-        reject(new Error("No token provided"));
-      }
-      jwt.verify(token.split(' ')[1], configService.getValue("JWT_ACCESS_TOKEN_SECRET_KEY"), async function (err: any, decoded: any) {
+      if (token && token.split(' ').length == 2 && token.includes('Beare')) {
+        jwt.verify(token.split(' ')[1], configService.getValue("JWT_ACCESS_TOKEN_SECRET_KEY"), async function (err: any, decoded: any) {
         if (err) {
           reject(err);
         } else {
@@ -29,6 +27,9 @@ export function expressAuthentication(
           resolve(user);
         }
       });
+      } else {
+        reject(new Error("No token provided"));
+      }
     });
 
 }

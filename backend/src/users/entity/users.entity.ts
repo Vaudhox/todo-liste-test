@@ -1,10 +1,12 @@
+import { ListEntity } from "../../lists/entity/lists.entity";
 import {
     Entity,
     Column, 
     PrimaryGeneratedColumn,
     UpdateDateColumn,
     CreateDateColumn,
-    Unique
+    Unique,
+    OneToMany
 } from "typeorm";
 
 @Entity({ name: 'users' })
@@ -52,4 +54,7 @@ export class UserEntity {
   
     @Column({ type: 'varchar', length: 100, nullable: true })
     lastName: string;
+
+    @OneToMany(type => ListEntity, list=> list.owner)
+    lists: ListEntity[];
 }

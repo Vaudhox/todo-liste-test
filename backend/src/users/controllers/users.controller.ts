@@ -113,7 +113,7 @@ export class UserController extends Controller {
     @SuccessResponse("200", "Email send") // Custom success response
     async askCheckEmail( @Body() askcheckEmail: AskCheckEmailDto) {
         try {
-            const user = await this.userRepository.findOneBy({email: askcheckEmail});
+            const user = await this.userRepository.findOneBy({email: askcheckEmail.email});
             if (user && user.tokenCheckYourEmail && !user.emailConfirm) {
                 var token = uuid4(); 
                 user.tokenCheckYourEmail = token

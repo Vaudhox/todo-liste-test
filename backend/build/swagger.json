@@ -6,6 +6,43 @@
 		"requestBodies": {},
 		"responses": {},
 		"schemas": {
+			"ListDataDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"endDate": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"title",
+					"endDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateListDto": {
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"endDate": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"title",
+					"endDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"UserDataDto": {
 				"properties": {
 					"id": {
@@ -158,6 +195,89 @@
 	},
 	"openapi": "3.0.0",
 	"paths": {
+		"/lists": {
+			"get": {
+				"operationId": "ListsFromRequester",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/ListDataDto"
+									},
+									"type": "array"
+								},
+								"examples": {
+									"Example 1": {
+										"value": [
+											{
+												"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+												"title": "title exemple",
+												"endDate": "1999-12-31T23:00:00.000Z"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ListDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"title": "title exemple",
+											"endDate": "1999-12-31T23:00:00.000Z"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateListDto"
+							}
+						}
+					}
+				}
+			}
+		},
 		"/users": {
 			"get": {
 				"operationId": "All",

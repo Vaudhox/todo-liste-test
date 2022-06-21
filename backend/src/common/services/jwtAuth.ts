@@ -2,6 +2,7 @@ import * as express from "express";
 import * as jwt from "jsonwebtoken";
 import { configService } from "../../config/config.service";
 import  DB from "../../common/database";
+import { ServerError } from "../../config/server-errors";
 
 export function expressAuthentication(
   request: express.Request,
@@ -19,7 +20,7 @@ export function expressAuthentication(
           // Check if JWT contains all required scopes
           for (let scope of scopes) {
             if (!decoded.scopes.includes(scope)) {
-              reject(new Error("JWT does not contain required scope."));
+              reject(new ServerError('JWT does not contain required scope.', 401));
             }
           }
 
@@ -28,7 +29,7 @@ export function expressAuthentication(
         }
       });
       } else {
-        reject(new Error("No token provided"));
+        reject(new ServerError('No token provided', 401));
       }
     });
 

@@ -21,6 +21,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
       with:
+        rm: true
         source: "./backend"
         target: "/var/www/todolist"
 

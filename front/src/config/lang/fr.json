@@ -1,0 +1,21 @@
+{
+  "common": {
+    "translate-button": "FR",
+    "error404": "Erreur 404 vous allez être redirigé dans ",
+    "error": "Une erreur est apparue",
+    "submit": "envoyer"
+  },
+  "user": {
+    "email": "email",
+    "firstname": "prénom",
+    "lastname": "nom"
+  },
+  "auth": {
+    "email-already-use": "Cet email est déjà utilisé",
+    "not-a-email": "l'email rentré n'est pas valide",
+    "password": "mot de passe",
+    "please-enter-input": "Veuillez remplir votre ",
+    "remember-me": "Se souvenir de moi",
+    "unauthorized": "Veuillez vérifier vos informations"
+  }
+}

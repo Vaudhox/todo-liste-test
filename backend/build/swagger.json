@@ -1,0 +1,728 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"ListDataDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"endDate": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"title",
+					"endDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateListDto": {
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"endDate": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"title",
+					"endDate"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"TaskDataDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"text": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					},
+					"listId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"createdAt",
+					"updatedAt",
+					"text",
+					"status",
+					"listId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateTaskDto": {
+				"properties": {
+					"text": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"text",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserDataDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string"
+					},
+					"emailConfirm": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"id",
+					"email",
+					"firstName",
+					"lastName",
+					"emailConfirm"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserCreateDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"firstName",
+					"lastName",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CheckEmailDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"token": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"token"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AskCheckEmailDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserAuthDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string"
+					},
+					"emailConfirm": {
+						"type": "boolean"
+					},
+					"token": {
+						"type": "string"
+					},
+					"expireToken": {
+						"type": "string"
+					},
+					"refreshToken": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"email",
+					"firstName",
+					"lastName",
+					"emailConfirm",
+					"token",
+					"expireToken",
+					"refreshToken"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginDto": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"bearerAuth": {
+				"type": "http",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "backend",
+		"version": "0.0.0",
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/lists": {
+			"get": {
+				"operationId": "ListsFromRequester",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/ListDataDto"
+									},
+									"type": "array"
+								},
+								"examples": {
+									"Example 1": {
+										"value": [
+											{
+												"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+												"title": "title exemple",
+												"endDate": "1999-12-31T23:00:00.000Z"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ListDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"title": "title exemple",
+											"endDate": "1999-12-31T23:00:00.000Z"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateListDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/lists/{id}": {
+			"put": {
+				"operationId": "Update",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ListDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"title": "title exemple",
+											"endDate": "1999-12-31T23:00:00.000Z"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateListDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Delete",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/{id}/tasks": {
+			"get": {
+				"operationId": "TasksFromList",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/TaskDataDto"
+									},
+									"type": "array"
+								},
+								"examples": {
+									"Example 1": {
+										"value": [
+											{
+												"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+												"createdAt": "2022-06-21T23:20:34.640Z",
+												"updatedAt": "2022-06-21T23:20:34.640Z",
+												"text": "My first task",
+												"status": false,
+												"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TaskDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+											"createdAt": "2022-06-21T23:20:34.640Z",
+											"updatedAt": "2022-06-21T23:20:34.640Z",
+											"text": "My first task",
+											"status": false,
+											"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTaskDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{id}/tasks/{taskId}": {
+			"put": {
+				"operationId": "Update",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TaskDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+											"createdAt": "2022-06-21T23:20:34.640Z",
+											"updatedAt": "2022-06-21T23:20:34.640Z",
+											"text": "My first task",
+											"status": false,
+											"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "taskId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTaskDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/register": {
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"email": "test",
+											"emailConfirm": false,
+											"firstName": "azea",
+											"lastName": "azaza"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserCreateDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/checkEmail": {
+			"post": {
+				"operationId": "CheckEmail",
+				"responses": {
+					"200": {
+						"description": "Email verify"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CheckEmailDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/askCheckEmail": {
+			"post": {
+				"operationId": "AskCheckEmail",
+				"responses": {
+					"200": {
+						"description": "Email send"
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AskCheckEmailDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserAuthDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"email": "test",
+											"emailConfirm": false,
+											"firstName": "azea",
+											"lastName": "azaza",
+											"token": "eznkjnezkjnez",
+											"refreshToken": "ezaeazeazeaz",
+											"expireToken": "zeazeazea"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginDto"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

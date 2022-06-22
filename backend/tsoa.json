@@ -1,0 +1,20 @@
+{
+    "entryFile": "app.ts",
+    "noImplicitAdditionalProperties": "throw-on-extras",
+    "controllerPathGlobs": ["src/**/*.controller.ts"],
+    "spec": {
+      "securityDefinitions": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+      },
+        "outputDirectory": "build",
+        "specVersion": 3
+      },
+    "routes": {
+        "routesDir": "build",
+        "authenticationModule": "src/common/services/jwtAuth.ts"
+    }
+  }

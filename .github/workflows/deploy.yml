@@ -20,7 +20,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        key: ${{ secrets.SSHKEY }}
         rm: true
         source: "./backend"
         target: "/var/www/todolist"

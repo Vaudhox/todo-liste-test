@@ -16,10 +16,10 @@ jobs:
     - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
+        host: 217.160.34.121
+        username: root
+        password: CE%dzFN%f1
+        port: 22
         rm: true
         source: "./backend"
         target: "/var/www/todolist"

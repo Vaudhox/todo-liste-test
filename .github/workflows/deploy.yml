@@ -21,7 +21,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
       with:
-        source: ".backend"
+        source: "./backend"
         target: "/var/www/todolist"
 
     - name: Executing remote command

@@ -56,7 +56,7 @@ function LayoutDefault() {
       <Content style={{ padding: '45px 40px 0', minHeight: 400, width: '100%' }}>
         <Root/>
       </Content>
-      <Footer style={{position: 'relative', marginTop: 20, backgroundColor: 'white'}}>Gift Historical ©2021 Created by Nicolas Briere</Footer>
+      <Footer style={{position: 'relative', marginTop: 20, backgroundColor: 'white'}}>Todo list test technique ©2022 Created by Nicolas Briere</Footer>
     </Layout>
   );
 }

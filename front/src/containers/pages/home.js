@@ -3,7 +3,6 @@ import API from '../../services/API';
 import { Card, List } from 'antd';
 import 'antd/dist/antd.css';
 
-
 export default function Home () {
     const [categories, setCategories] = useState([])
     const [loadingCategories, setLoadingCategories] = useState(true)

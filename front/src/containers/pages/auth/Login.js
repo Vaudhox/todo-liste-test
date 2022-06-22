@@ -6,6 +6,7 @@ import API from '../../../services/API';
 import { useNavigate  } from "react-router-dom";
 import { LoadingOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
+import 'antd/dist/antd.css';
 
 const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
 
@@ -28,7 +29,8 @@ function Login() {
 
   return (
     <div style={{
-      display: "flex"
+      display: "flex",
+      textAlign: "center"
     }}>
       <div className={"boxShadow inlineBlock center"} style={{
         padding: 25,
@@ -62,10 +64,6 @@ function Login() {
         <Input.Password />
       </Form.Item>
 
-     {/* <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-        <Checkbox>{Capitalize(t('auth.remember-me'))}</Checkbox>
-      </Form.Item>
-*/}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
           {Capitalize(t('common.submit'))}

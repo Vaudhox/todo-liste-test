@@ -21,6 +21,22 @@ export async function login(params) {
     return response.data
 }
 
+export async function checkEmail(params) {
+  const response = await axiosInstance.post('/checkEmail', {
+    id: params.id,
+    token: params.token,
+  });
+  return response.data
+}
+
+export async function sendVerifyEmail(params) {
+  console.log(params)
+  const response = await axiosInstance.post('/askCheckEmail', {
+    email: params.email,
+  });
+  return response.data
+}
+
 /*export async function whoiam( callback = null) {
   try {
     const response = await axiosInstance.get('/users/whoami');

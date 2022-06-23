@@ -6,7 +6,8 @@ const initialState = {
   firstName: "",
   lastName: "",
   refresh_token: "",
-  remember_me: false
+  remember_me: false,
+  emailConfirm: false,
 }
 
 const userSlice = createSlice({
@@ -26,10 +27,13 @@ const userSlice = createSlice({
     },
     setRememberMe(state, action) {
       return { ...state, remember_me: action.payload}
+    },
+    confirmEmail(state, action) {
+      return { ...state, emailConfirm: true}
     }
   },
 })
 
-export const { setLogin, logout, setRefreshToken, setRememberMe } = userSlice.actions
+export const { setLogin, logout, setRefreshToken, setRememberMe, confirmEmail } = userSlice.actions
 
 export default userSlice.reducer

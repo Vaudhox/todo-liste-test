@@ -7,3 +7,8 @@ export async function getAllMyList() {
     return response.data
 }
 
+export async function getTasksByList(params) {
+    const response = await axiosInstance.get('/' + params.listId + '/tasks');
+    return response.data
+}
+

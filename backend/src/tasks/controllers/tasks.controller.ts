@@ -52,7 +52,7 @@ export class TaskController extends Controller {
       }])
     @Security("bearerAuth")
     async tasksFromList(@Request() request: any, @Path() id: string): Promise<TaskDataDto[]> {
-        const list = await this.listsService.findListById(id)
+        const list = await this.listsService.findListById(id);
         if (list && list.owner.id === request?.user.id) {
             const tasks = await this.tasksService.findTasksByList(list);
             return tasks.map(task => taskMapperToTaskData(task));

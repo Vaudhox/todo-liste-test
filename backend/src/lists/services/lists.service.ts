@@ -15,7 +15,7 @@ export default class ListService {
 
 
     async findListByUser(user: UserEntity): Promise<ListEntity[]> {
-        const lists = await this.listRepository.find({owner: user})
+        const lists = await this.listRepository.find({where: {owner: {id: user.id}}, relations: ["owner"]})
         return lists
     }
 

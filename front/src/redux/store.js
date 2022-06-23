@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import app from './app/appSlice';
-import user from './user/userSlice'
+import user from './user/userSlice';
+import list from './list/listSlice';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import thunk from 'redux-thunk';
@@ -12,7 +13,8 @@ import rootSaga from './rootSaga';
 // Its API is { subscribe, dispatch, getState }.
 const rootReducer = combineReducers({
   app,
-  user
+  user,
+  list
 })
 
 const persistConfig = {

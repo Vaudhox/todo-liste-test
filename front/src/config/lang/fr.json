@@ -16,6 +16,8 @@
     "password": "mot de passe",
     "please-enter-input": "Veuillez remplir votre ",
     "remember-me": "Se souvenir de moi",
-    "unauthorized": "Veuillez vérifier vos informations"
+    "unauthorized": "Access refusé veuillez vérifier vos informations",
+    "error-check-email": "Nous n'avons pas pu valider votre email veuillez vérifier vos mails",
+    "sendEmailVerification": "Envoyer un nouvel email de vérification"
   }
 }

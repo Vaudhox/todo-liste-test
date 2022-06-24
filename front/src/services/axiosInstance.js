@@ -26,7 +26,7 @@ instance.interceptors.response.use((response) => {
 }, async (error)  => {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
-  if (error.response.status === 401 && error.response.data.message === "Expired token") {
+  if (error.response.status === 401 && error.response.data.name === "TokenExpiredError") {
     try {
       const response = await axios.post(BASE_URL + 'refresh', null, {
         headers: {

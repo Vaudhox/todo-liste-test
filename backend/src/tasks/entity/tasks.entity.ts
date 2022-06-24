@@ -28,6 +28,6 @@ export class TaskEntity {
     @Column({ type: 'boolean', nullable: false, default: false})
     status: boolean;
 
-    @ManyToOne(type => ListEntity, list => list.tasks)
+    @ManyToOne(type => ListEntity, list => list.tasks, { cascade: true, onDelete: "CASCADE"})
     list: ListEntity;
 }

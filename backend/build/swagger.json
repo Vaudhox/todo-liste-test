@@ -43,6 +43,56 @@
 				"type": "object",
 				"additionalProperties": false
 			},
+			"TaskDataDto": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"text": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					},
+					"listId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"createdAt",
+					"updatedAt",
+					"text",
+					"status",
+					"listId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateTaskDto": {
+				"properties": {
+					"text": {
+						"type": "string"
+					},
+					"status": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"text",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
 			"UserDataDto": {
 				"properties": {
 					"id": {
@@ -272,6 +322,258 @@
 						"application/json": {
 							"schema": {
 								"$ref": "#/components/schemas/CreateListDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/lists/{id}": {
+			"put": {
+				"operationId": "Update",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ListDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"title": "title exemple",
+											"endDate": "1999-12-31T23:00:00.000Z"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateListDto"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "Delete",
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				},
+				"tags": [
+					"List"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/{id}/tasks": {
+			"get": {
+				"operationId": "TasksFromList",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/TaskDataDto"
+									},
+									"type": "array"
+								},
+								"examples": {
+									"Example 1": {
+										"value": [
+											{
+												"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+												"createdAt": "2022-06-21T23:20:34.640Z",
+												"updatedAt": "2022-06-21T23:20:34.640Z",
+												"text": "My first task",
+												"status": false,
+												"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "Create",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TaskDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+											"createdAt": "2022-06-21T23:20:34.640Z",
+											"updatedAt": "2022-06-21T23:20:34.640Z",
+											"text": "My first task",
+											"status": false,
+											"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTaskDto"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{id}/tasks/{taskId}": {
+			"put": {
+				"operationId": "Update",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TaskDataDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "a0651deb-d64a-4f67-9273-da9e5895c5ef",
+											"createdAt": "2022-06-21T23:20:34.640Z",
+											"updatedAt": "2022-06-21T23:20:34.640Z",
+											"text": "My first task",
+											"status": false,
+											"listId": "29986e3c-e8f2-43e6-927d-91c2a159538a"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Task"
+				],
+				"security": [
+					{
+						"bearerAuth": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "taskId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTaskDto"
 							}
 						}
 					}

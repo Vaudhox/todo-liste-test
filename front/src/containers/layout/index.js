@@ -23,7 +23,7 @@ function LayoutDefault() {
     if (access_token) {
       return(
         <>
-          <Link to="/whoiam" style={{ marginLeft: 20}}>Whoiam</Link>
+          <Link to="/lists" style={{ marginLeft: 20}}>Mes lists</Link>
           <Link to="/logout" style={{ marginLeft: 20}}>Logout</Link>
         </>
       )
@@ -41,11 +41,10 @@ function LayoutDefault() {
     return (
       <div style={{ display: 'flex', position: 'absolute', right: 8, top:10, zIndex: 100 }}>
         <TweenOne style={{fontSize: 20}} animation={{ y: 30, opacity: 0, type: 'from' }}>
-          <Link to="/about">{t('Welcome to React')}</Link>
           { renderLinks() }
         </TweenOne>
         <TweenOne style={{fontSize: 20, marginLeft: 10}} animation={{ y: 30, opacity: 0, type: 'from' }}>
-          <Lang />
+          <Lang selectStyle={{backgroundColor: 'blue'}} />
         </TweenOne>
       </div>
     )
@@ -54,9 +53,14 @@ function LayoutDefault() {
     <Layout style={{ padding: 0, backgroundColor: 'white'}}>
       <Banner title="Briere Todo List" subTitle="Test technique" renderHeaderBar={renderHeaderBar}/>
       <Content style={{ padding: '45px 40px 0', minHeight: 400, width: '100%' }}>
-        <Root/>
+        <div style={{
+          padding: 25,
+        }}>
+          
+          <Root/>
+        </div>
       </Content>
-      <Footer style={{position: 'relative', marginTop: 20, backgroundColor: 'white'}}>Gift Historical ©2021 Created by Nicolas Briere</Footer>
+      <Footer style={{position: 'relative', marginTop: 20, backgroundColor: 'white', textAlign: "center"}}>Todo list test technique ©2022 Created by Nicolas Briere</Footer>
     </Layout>
   );
 }

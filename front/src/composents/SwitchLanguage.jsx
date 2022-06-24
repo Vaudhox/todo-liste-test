@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { switchLang } from '../redux/app/appSlice';
 import { useTranslation } from 'react-i18next';
 
-function Lang({style}) {
+function Lang({style, selectStyle}) {
   const dispatch = useDispatch()
   const { i18n } = useTranslation()
   const lang = useSelector((state) => state.app.language)
@@ -32,7 +32,7 @@ function Lang({style}) {
 
   return (
     <div style={style}>
-      <select value={lang} name="language" onChange={changeLanguage}>
+      <select style={selectStyle} value={lang} name="language" onChange={changeLanguage}>
         <option value={Language.FR}>FR</option>
         <option value={Language.EN}>EN</option>
       </select>

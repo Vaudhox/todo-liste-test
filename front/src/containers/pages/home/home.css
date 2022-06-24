@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+.space-children > * {
+    margin: 20px 0;
+}
+
+.container-list {
+    display: inline-block;
+    text-align: left;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-position: inside;
+}

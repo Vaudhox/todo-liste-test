@@ -50,13 +50,13 @@ function LayoutDefault() {
     )
   }
   return (
-    <Layout style={{ padding: 0, backgroundColor: 'white'}}>
+    <Layout className="App" style={{ padding: 0, backgroundColor: 'white'}}>
       <Banner title="Briere Todo List" subTitle="Test technique" renderHeaderBar={renderHeaderBar}/>
       <Content style={{ padding: '45px 40px 0', minHeight: 400, width: '100%' }}>
         <div style={{
           padding: 25,
         }}>
-          
+
           <Root/>
         </div>
       </Content>

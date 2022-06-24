@@ -25,7 +25,7 @@ export default class ListService {
     }
 
     async create(user: UserEntity, listDto: CreateListDto): Promise<ListEntity> {
-        const endDate = new Date(listDto.endDate)
+        const endDate = listDto.endDate ? new Date(listDto.endDate) : null
         const list = new ListEntity();
         list.title = listDto.title;
         list.endDate = endDate;

@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
+import AddList from '../../composents/AddList';
 
 const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
 
@@ -20,13 +21,17 @@ export default function Lists () {
         dispatch({type: "LISTS_REQUESTED"})
     },[])
 
+
     return (
         <Row justify="center" align="middle">
             <Col span={12}>
             { loadingLists ? <Spin size='large' indicator={antIcon} />  : <>
            
                 <List
-                    header={<div>Header</div>}
+                    header={<div>
+                        <h2>My Lists</h2>
+                        <AddList />
+                    </div>}
                     footer={<div>Footer</div>}
                     bordered
                     dataSource={lists}

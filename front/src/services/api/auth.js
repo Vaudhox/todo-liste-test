@@ -30,7 +30,6 @@ export async function checkEmail(params) {
 }
 
 export async function sendVerifyEmail(params) {
-  console.log(params)
   const response = await axiosInstance.post('/askCheckEmail', {
     email: params.email,
   });

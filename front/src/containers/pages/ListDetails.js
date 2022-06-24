@@ -20,27 +20,23 @@ export default function ListDetails () {
     const [listShow, setListShow] = useState(null)
 
     useEffect(() => {
-        console.log(lists.length)
-        console.log(lists)
         if (lists.lenght != 0) {
-            console.log(id,  lists.find(list => list.id === id))
             const listToShow = lists.find(list => list.id === id);
-            console.log(listToShow)
             if (listToShow) {
                 setListShow(listToShow)
                 dispatch({type: "TASKS_REQUEST", payload: {listId: listToShow.id}})
             } else {
-             //   navigate('/lists')
+                navigate('/lists')
             }
         } else {
-           // navigate('/lists')
+                navigate('/lists')
         }
     },[])
 
     return (
         <Row justify="center" align="middle">
             <Col span={12}>
-            { loadingList || !listShow ? <Spin size='large' indicator={antIcon} />  : <>
+            { loadingList || !listShow ? <Spin size='large' indicator={antIcon} /> : <>
            
                 <List
                     header={<div>{listShow.title}</div>}

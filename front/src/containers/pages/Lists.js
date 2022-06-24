@@ -21,17 +21,22 @@ export default function Lists () {
         dispatch({type: "LISTS_REQUESTED"})
     },[])
 
+    const renderHeader = () => {
+        return (
+            <div style={{textAlign: "center"}}>
+                <h2>My Lists</h2>
+                <AddList styleIcon={{fontSize: 32}} style={{position: "absolute", right: 15, top: 15}}/>
+            </div>
+        )
+    }
 
     return (
         <Row justify="center" align="middle">
             <Col span={12}>
             { loadingLists ? <Spin size='large' indicator={antIcon} />  : <>
-           
+
                 <List
-                    header={<div>
-                        <h2>My Lists</h2>
-                        <AddList />
-                    </div>}
+                    header={renderHeader()}
                     footer={<div>Footer</div>}
                     bordered
                     dataSource={lists}

@@ -1,11 +1,12 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
 import API from '../../services/API';
 import { setLists, setLoading, setTasks } from './listSlice';
+import {notification} from "antd";
 
-function* fetchMyLists(action) {
+function* fetchMyLists() {
    try {
       yield put(setLoading(true));
-      const responseData = yield call(API.getAllMyList, action.payload);
+      const responseData = yield call(API.getAllMyList);
       yield put(setLists(responseData));
       yield put(setLoading(false));
    } catch (e) {
@@ -27,9 +28,20 @@ function* fetchTasks(action) {
    }
 }
 
+function* fetchAddList(action) {
+   try {
+      yield call(API.addList, action.payload);
+      yield call(fetchMyLists)
+   } catch (e) {
+      console.log(e)
+      notification.error({message: "Error on add list"})
+   }
+}
+
 function* listSaga() {
   yield takeEvery("LISTS_REQUESTED", fetchMyLists);
   yield takeEvery("TASKS_REQUEST", fetchTasks);
+  yield takeEvery("ADD_LIST_REQUEST", fetchAddList);
 }
 
 export default listSaga;

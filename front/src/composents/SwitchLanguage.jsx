@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Language } from '../config/lang/Language.ts';
+import { Language } from '../config/lang/Language.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { switchLang } from '../redux/app/appSlice';
 import { useTranslation } from 'react-i18next';

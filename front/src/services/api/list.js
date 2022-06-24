@@ -1,5 +1,3 @@
-import Store from '../../redux/store';
-import { setLogin } from '../../redux/user/userSlice.js';
 import axiosInstance from '../axiosInstance';
 
 export async function getAllMyList() {
@@ -12,3 +10,7 @@ export async function getTasksByList(params) {
     return response.data
 }
 
+export async function addList(params) {
+    const response = await axiosInstance.post('/lists', params);
+    return response.data
+}

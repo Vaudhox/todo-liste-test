@@ -5,10 +5,14 @@ import 'rc-banner-anim/assets/index.css';
 import './banner.css'
 import hmeImg from '../../assets/header.jpg';
 import hmeImg2 from '../../assets/140.jpg';
+import { useNavigate  } from "react-router-dom";
 
 const BgElement = Element.BgElement;
 export const Banner = ({title, subTitle, renderHeaderBar}) =>{
-
+  const navigate = useNavigate()
+  const redirectHome = () => {
+    navigate("/");
+  }
   return (
     <BannerAnim prefixCls="banner-user">
       <Element
@@ -26,11 +30,13 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
           }}
         />
         {renderHeaderBar()}
-        <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
+        <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }} onClick={redirectHome}>
           {title}
         </TweenOne>
-        <TweenOne className="banner-user-text"
-                  animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+        <TweenOne 
+          className="banner-user-text"
+          animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+          onClick={redirectHome}
         >
           {subTitle}
         </TweenOne>
@@ -50,11 +56,12 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
           }}
         />
         {renderHeaderBar()}
-        <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
+        <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }} onClick={redirectHome}>
           {title}
         </TweenOne>
         <TweenOne className="banner-user-text"
                   animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
+                  onClick={redirectHome}
         >
           {subTitle}
         </TweenOne>

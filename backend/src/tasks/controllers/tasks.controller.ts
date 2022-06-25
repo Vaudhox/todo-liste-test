@@ -15,7 +15,8 @@ import {
     Example,
     Put,
     Security,
-    Request
+    Request,
+    Delete
   } from "tsoa";
 import * as uuid4 from "uuid4";
 import TaskService from "../services/tasks.service";
@@ -52,7 +53,7 @@ export class TaskController extends Controller {
       }])
     @Security("bearerAuth")
     async tasksFromList(@Request() request: any, @Path() id: string): Promise<TaskDataDto[]> {
-        const list = await this.listsService.findListById(id)
+        const list = await this.listsService.findListById(id);
         if (list && list.owner.id === request?.user.id) {
             const tasks = await this.tasksService.findTasksByList(list);
             return tasks.map(task => taskMapperToTaskData(task));
@@ -99,6 +100,24 @@ export class TaskController extends Controller {
         if (list && list.owner.id === request?.user.id) {
             const task = await this.tasksService.update(dto, taskId);
             return taskMapperToTaskData(task);
+        } else {
+            throw new ServerError('Unauthorize', 401)
+        }
+    }
+
+    @Delete("{id}/tasks/{taskId}")
+    @SuccessResponse("200")
+    @Security("bearerAuth")
+    async delete(@Request() request: any, @Path() id: string,  @Path() taskId: string) {
+        const list = await this.listsService.findListById(id)
+        if (list && list.owner.id === request?.user.id) { 
+            const tasks = await this.tasksService.findTasksByList(list)
+            if (tasks.find(item => item.id === taskId)) {
+                await this.tasksService.delete(taskId)
+                this.setStatus(200)
+            } else {
+                throw new ServerError('Not found', 404)
+            }
         } else {
             throw new ServerError('Unauthorize', 401)
         }

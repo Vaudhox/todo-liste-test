@@ -31,4 +31,8 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: ls
+        script: |
+          cp /var/.env /var/www/todolist/backend
+          cd /var/www/todolist/backend
+          npm run typeorm:run
+          npm run swagger

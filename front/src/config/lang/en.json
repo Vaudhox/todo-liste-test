@@ -16,6 +16,8 @@
     "password": "password",
     "please-enter-input": "Please input your ",
     "remember-me": "Remember me",
-    "unauthorized": "Please verify your data"
+    "unauthorized": "Please verify your data",
+    "error-check-email": "We could not validate your email please check your emails",
+    "sendEmailVerification": "Send a new verification email"
   }
 }

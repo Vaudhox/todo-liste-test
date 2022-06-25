@@ -40,7 +40,7 @@ function Login() {
 
   return (
       <Row justify="center" align="middle">
-      <Col span={12} offset={6}>
+      <Col span={12}>
       { loading ? <Spin size='large' indicator={antIcon} />  : <>
 
           {

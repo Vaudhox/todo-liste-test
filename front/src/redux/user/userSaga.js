@@ -9,18 +9,18 @@ function* fetchLogin(action) {
       const responseData = yield call(API.login, action.payload);
       if (responseData.emailConfirm) {
          yield put(setLogin(responseData));
-         window.location = "/"
+         window.location = "/lists"
       } else {
          window.location = "/checkEmail"
       }
    } catch (e) {
       console.log(e)
-      if (e.response.data.status === 401) { 
+      if (e.response.data.status === 401) {
          yield put(setFormError("unauthorized"));
       } else {
          yield put(setFormError("error"));
       }
-    
+
    }
 }
 
@@ -31,12 +31,12 @@ function* fetchRegister(action) {
       window.location = "/checkEmail"
    } catch (e) {
       console.log(e)
-      if (e.response.data.status === 401) { 
+      if (e.response.data.status === 401) {
          yield put(setFormError("unauthorized"));
       } else {
          yield put(setFormError("error"));
       }
-    
+
    }
 }
 

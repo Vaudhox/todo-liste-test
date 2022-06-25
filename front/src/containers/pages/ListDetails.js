@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, List, Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import {Row, Col, List, Spin, Switch, Button} from 'antd';
 import 'antd/dist/antd.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useParams, useNavigate } from "react-router-dom";
+import AddTask from "../../composents/AddTask";
+import SpinnerCustom from "../../composents/SpinnerCustom";
+import { LeftCircleFilled } from '@ant-design/icons';
 
-const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
 
 export default function ListDetails () {
 
@@ -33,24 +34,58 @@ export default function ListDetails () {
         }
     },[])
 
-    return (
-        <Row justify="center" align="middle">
-            <Col span={12}>
-            { loadingList || !listShow ? <Spin size='large' indicator={antIcon} /> : <>
-           
-                <List
-                    header={<div>{listShow.title}</div>}
-                    bordered
-                    dataSource={tasks}
-                    renderItem={item => (
-                        <List.Item>
-                            {item.text}
-                        </List.Item>
-                    )}
+    const renderHeader = () => {
+        return (
+            <div style={{textAlign: "center"}}>
+                <LeftCircleFilled
+                    style={{fontSize: 28, position: "absolute", left: 10, top: 10}}
+                    onClick={() => navigate('/lists')}
                 />
-            </>
-           }
-            </Col>
-        </Row>
+                <h2 style={{marginTop: 8}}>{listShow.title}</h2>
+                { listShow.endDate ? <p>Date de fin: {listShow.endDate.toString().split('T')[0]}</p> : <p>Pas de date de fin</p>}
+                <AddTask listId={listShow.id} styleIcon={{fontSize: 32}} style={{position: "absolute", right: 10, top: 10}}/>
+            </div>
+        )
+    }
+
+    const onChangeStatus = (value, item) => {
+        dispatch({type: "UPDATE_TASK_REQUEST", payload: {taskId: item.id, listId: item.listId, text: item.text, status: value}})
+    }
+
+    const onDeleteTask = (item) => {
+        dispatch({type: "DELETE_TASK_REQUEST", payload: {taskId: item.id, listId: item.listId }})
+    }
+
+    const renderList = () => {
+        return (
+            <List
+                header={renderHeader()}
+                bordered
+                dataSource={tasks}
+                renderItem={item => (
+                    <List.Item>
+                        <Row justify="center" gutter={16}>
+                            <Col>
+                            <h3>{item.text}</h3>
+                            </Col>
+                            <Col>
+                                <Switch style={{marginLeft: 5}} checked={item.status} onChange={(value) => {onChangeStatus(value, item)}} />
+                            </Col>
+                            <Col>
+                                <Button type="danger" onClick={() =>{ onDeleteTask(item)}}>
+                                    Delete
+                                </Button>
+                            </Col>
+                        </Row>
+                    </List.Item>
+                )}
+            />
+        )
+    }
+
+    return (
+        <div style={{paddingLeft: "5%", paddingRight: "5%"}}>
+            { loadingList || !listShow ? <SpinnerCustom /> : renderList() }
+        </div>
     )
 }

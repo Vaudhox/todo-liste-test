@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, List, Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import {Row, Tabs, List, Collapse, Form, Input, Button, DatePicker, Modal} from 'antd';
 import 'antd/dist/antd.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import AddList from '../../composents/AddList';
+import SpinnerCustom from '../../composents/SpinnerCustom';
+import {Capitalize} from "../../utils";
+import ListItem from "../../composents/ListItem";
 
-const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
 
 export default function Lists () {
 
@@ -15,7 +16,6 @@ export default function Lists () {
     const dispatch = useDispatch()
     const lists = useSelector((state) => state.list.lists);
     const loadingLists = useSelector((state) => state.list.loading);
-    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch({type: "LISTS_REQUESTED"})
@@ -24,31 +24,29 @@ export default function Lists () {
     const renderHeader = () => {
         return (
             <div style={{textAlign: "center"}}>
-                <h2>My Lists</h2>
+                <h2 style={{marginTop: 8}}>My Lists</h2>
                 <AddList styleIcon={{fontSize: 32}} style={{position: "absolute", right: 15, top: 15}}/>
             </div>
         )
     }
 
+    const renderList =() => {
+        return (
+            <List
+                header={renderHeader()}
+                bordered
+                dataSource={lists}
+                renderItem={item => (
+                    <List.Item style={{width: "100%"}}>
+                       <ListItem item={item} />
+                    </List.Item>
+                )}
+            />
+        )
+    }
     return (
-        <Row justify="center" align="middle">
-            <Col span={12}>
-            { loadingLists ? <Spin size='large' indicator={antIcon} />  : <>
-
-                <List
-                    header={renderHeader()}
-                    footer={<div>Footer</div>}
-                    bordered
-                    dataSource={lists}
-                    renderItem={item => (
-                        <List.Item style={{cursor: 'pointer'}} onClick={() => navigate('/list/' + item.id)}>
-                            {item.title}
-                        </List.Item>
-                    )}
-                />
-            </>
-           }
-            </Col>
-        </Row>
+        <div style={{paddingLeft: "5%", paddingRight: "5%"}}>
+            { loadingLists ? <SpinnerCustom /> : renderList() }
+        </div>
     )
 }

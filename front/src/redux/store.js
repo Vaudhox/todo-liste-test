@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['user'] // will be persisted
+  whitelist: ['user', 'list'] // will be persisted
 }
 
 // create the saga middleware

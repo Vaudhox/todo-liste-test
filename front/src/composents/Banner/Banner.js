@@ -23,7 +23,7 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
           key="bg"
           className="bg"
           style={{
-            backgroundImage: `url(${hmeImg2})`,
+            backgroundImage: `url('https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg')`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -33,7 +33,7 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
         <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }} onClick={redirectHome}>
           {title}
         </TweenOne>
-        <TweenOne 
+        <TweenOne
           className="banner-user-text"
           animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           onClick={redirectHome}
@@ -49,10 +49,10 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
           key="bg"
           className="bg"
           style={{
-            backgroundImage: `url('https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg')`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
+              backgroundImage: `url(${hmeImg2})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
           }}
         />
         {renderHeaderBar()}

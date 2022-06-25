@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Row, Col, List, Spin, DatePicker, Modal, notification } from 'antd';
-import { LoadingOutlined, PlusCircleFilled } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Input, Button, DatePicker, Modal, notification } from 'antd';
+import { PlusCircleFilled } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import { Capitalize, useQuery } from '../utils/index';
-import { useDispatch, useSelector } from 'react-redux';
+import { Capitalize } from '../utils/index';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
-
-const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
 
 export default function AddList ({styleIcon, style}) {
 
     const { t } = useTranslation();
     const dispatch = useDispatch()
-  //  const lists = useSelector((state) => state.list.lists);
-   // const loadingLists = useSelector((state) => state.list.loading);
-    const navigate = useNavigate();
     const [title, setTitle] = useState("")
     const [endDate, setEndDate] = useState("")
     const [showModal, setShowModal] = useState(false);

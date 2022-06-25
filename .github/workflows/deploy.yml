@@ -34,7 +34,10 @@ jobs:
         script: |
           cp /var/.env /var/www/todolist/backend
           cd /var/www/todolist/backend
-          nvm -v
+          sudo apt install curl 
+          curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+          source ~/.profile
+          nvm install stable
           nvm use stable
           npm install pm2@latest -g
           pm2 install typescript

@@ -35,5 +35,6 @@ jobs:
           cp /var/.env /var/www/todolist/backend
           cd /var/www/todolist/backend
           node -v
-          npm run typeorm:run
+          npm install
           npm run swagger
+          pm2 restart backendServer

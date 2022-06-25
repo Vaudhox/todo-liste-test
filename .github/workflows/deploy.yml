@@ -36,3 +36,4 @@ jobs:
           cd /var/www/todolist/backend
           npm install
           npm run swagger
+          pm2 restart backendServer

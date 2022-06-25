@@ -36,4 +36,3 @@ jobs:
           cd /var/www/todolist/backend
           npm run typeorm:run
           npm run swagger
-          npm run start

@@ -13,7 +13,7 @@ export default class TaskService {
 
 
     async findTasksByList(list: ListEntity): Promise<TaskEntity[]> {
-        const tasks = await this.taskRepository.find({where: {list: {id: list.id}}, relations: ["list"]})
+        const tasks = await this.taskRepository.find({where: {list: {id: list.id}},order: {createdAt: 'ASC'}, relations: ["list"]})
         return tasks
     }
 
@@ -32,5 +32,10 @@ export default class TaskService {
         task.status = dto.status;
         const taskSave = await this.taskRepository.save(task)
         return taskSave
+    }
+        
+    async delete(id: string) {
+        await this.taskRepository.delete(id);
+        return 
     }
 }

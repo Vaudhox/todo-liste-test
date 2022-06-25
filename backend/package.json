@@ -9,7 +9,7 @@
     "start:dev": "nodemon --watch './**/*.ts' --exec 'ts-node main.ts'",
     "start:dev-swagger": "concurrently \"npm run start:dev\" \"nodemon -x tsoa spec\"",
     "swagger": "tsoa spec-and-routes && tsoa swagger && tsc",
-    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --d src/config/ormconfig.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/config/ormconfig.ts",
     "typeorm:migrate": "npm run typeorm migration:generate -- -n",
     "typeorm:run": "npm run typeorm migration:run",
     "typeorm:create": "npm run typeorm migration:create -- -n"

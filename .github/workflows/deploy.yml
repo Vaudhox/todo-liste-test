@@ -34,5 +34,6 @@ jobs:
         script: |
           cp /var/.env /var/www/todolist/backend
           cd /var/www/todolist/backend
+          node -v
           npm run typeorm:run
           npm run swagger

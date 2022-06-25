@@ -22,6 +22,7 @@ const myDataSource = new DataSource({
     logger: 'file',
     // the compiled js in prod or the ts in dev.
     migrations: [__dirname + '/../migrations/**/*{.ts,.js}'],
+
 })
 
 export default myDataSource;

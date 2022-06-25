@@ -34,6 +34,13 @@ jobs:
         script: |
           cp /var/.env /var/www/todolist/backend
           cd /var/www/todolist/backend
-          npm run typeorm:run
+          sudo apt install curl 
+          curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+          source ~/.profile
+          nvm install stable
+          nvm use stable
+          npm install pm2@latest -g
+          pm2 install typescript
+          npm install
           npm run swagger
-          npm run start
+          pm2 start ecosystem.config.js --only backendServer --name backendServer

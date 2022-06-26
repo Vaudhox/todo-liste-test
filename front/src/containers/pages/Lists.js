@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import {Row, Tabs, List, Collapse, Form, Input, Button, DatePicker, Modal} from 'antd';
+import React, { useEffect } from 'react';
+import {List} from 'antd';
 import 'antd/dist/antd.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 import AddList from '../../composents/AddList';
 import SpinnerCustom from '../../composents/SpinnerCustom';
-import {Capitalize} from "../../utils";
 import ListItem from "../../composents/ListItem";
 
 
@@ -24,7 +22,7 @@ export default function Lists () {
     const renderHeader = () => {
         return (
             <div style={{textAlign: "center"}}>
-                <h2 style={{marginTop: 8}}>My Lists</h2>
+                <h2 style={{marginTop: 8}}>{t('list.my-list')}</h2>
                 <AddList styleIcon={{fontSize: 32}} style={{position: "absolute", right: 15, top: 15}}/>
             </div>
         )

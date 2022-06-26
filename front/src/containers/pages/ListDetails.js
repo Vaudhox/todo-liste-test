@@ -42,7 +42,7 @@ export default function ListDetails () {
                     onClick={() => navigate('/lists')}
                 />
                 <h2 style={{marginTop: 8}}>{listShow.title}</h2>
-                { listShow.endDate ? <p>Date de fin: {listShow.endDate.toString().split('T')[0]}</p> : <p>Pas de date de fin</p>}
+                { listShow.endDate ? <p>{t('list.date-end')}: {listShow.endDate.toString().split('T')[0]}</p> : <p>{t('list.no-end-date')}</p>}
                 <AddTask listId={listShow.id} styleIcon={{fontSize: 32}} style={{position: "absolute", right: 10, top: 10}}/>
             </div>
         )
@@ -73,7 +73,7 @@ export default function ListDetails () {
                             </Col>
                             <Col>
                                 <Button type="danger" onClick={() =>{ onDeleteTask(item)}}>
-                                    Delete
+                                    {t('common.delete')}
                                 </Button>
                             </Col>
                         </Row>

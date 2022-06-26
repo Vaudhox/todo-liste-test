@@ -3,12 +3,25 @@
     "translate-button": "EN",
     "error404": "Error 404 you will be redirect in ",
     "submit": "submit",
-    "error": "an error has occurred"
+    "error": "an error has occurred",
+    "and": "and",
+    "delete": "Delete",
+    "update": "Update",
+    "details": "Details"
   },
   "user": {
     "email": "email",
     "firstname": "first name",
-    "lastname": "last name"
+    "lastname": "last name",
+    "title": "title",
+    "create": "create",
+    "task": "task"
+  },
+  "navigation": {
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "my-list": "My list"
   },
   "auth": {
     "email-already-use": "email already use",
@@ -19,5 +32,22 @@
     "unauthorized": "Please verify your data",
     "error-check-email": "We could not validate your email please check your emails",
     "sendEmailVerification": "Send a new verification email"
+  },
+  "home": {
+    "welcome": "Welcome on this Todo List website",
+    "description": "This website was done as part of a technical test<br/>\nThis solution allow you to create lists and tasks to do",
+    "realisation": "Realisation",
+    "backend-description": "API Domain Driven Development Architecture ",
+    "backend-nodejs": "NodeJs and Express in Typescript",
+    "backend-swagger": "Use Tsoa library and <a target={\"_blank\"} href={process.env.REACT_APP_API_URL + \"api-docs\"}>Swagger for API documentation </a>",
+    "backend-typeorm": "Typeorm as orm with a Postgres Data Base héberger host on Google Cloud",
+    "frontend-description": "Containers et Components Architecture"
+  },
+  "list": {
+    "my-list": "My lists",
+    "date-end": "End date",
+    "cron-details": "If a end date is define a email will be send 24h before the day",
+    "no-end-date": "No end date",
+    "add-list": "Add a list"
   }
 }

@@ -21,7 +21,6 @@ export default function AddList ({styleIcon, style}) {
     const onChangeDatePicker = (date) => {
         if (date) {
             const dateEnd = date.format('L')
-            console.log(dateEnd);
             setEndDate(dateEnd);
         } else {
             setEndDate(null);
@@ -46,7 +45,7 @@ export default function AddList ({styleIcon, style}) {
         <div style={style}>
             <PlusCircleFilled onClick={() => setShowModal(true)} style={styleIcon}/>
             <Modal
-                title="Add a list"
+                title={t('list.add-list')}
                 centered
                 closable
                 visible={showModal}
@@ -55,7 +54,7 @@ export default function AddList ({styleIcon, style}) {
                 footer={null}
             >
 
-                <Input value={title} placeholder="Title" onChange={(event) => setTitle(event.target.value)}/>
+                <Input value={title} placeholder={Capitalize(t('common.title'))} onChange={(event) => setTitle(event.target.value)}/>
 
                 <DatePicker onChange={onChangeDatePicker} placement="bottomRight"/>
                 <Button type="primary" htmlType="submit" onClick={onFinish}>

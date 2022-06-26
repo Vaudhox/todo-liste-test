@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5491910-6739-40ad-aa47-d8c2455e1a39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front/src/composents/AddTask.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/composents/ListItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/composents/SpinnerCustom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/composents/AddList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/composents/AddList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/composents/AddTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/composents/AddTask.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/composents/Banner/Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/composents/Banner/Banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/composents/ListItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/composents/ListItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/config/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/config/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/config/lang/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/config/lang/fr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/containers/layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/layout/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/containers/pages/ListDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/pages/ListDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/containers/pages/Lists.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/pages/Lists.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/containers/pages/auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/pages/auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/redux/list/listSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/redux/list/listSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/redux/list/listSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/redux/list/listSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/redux/user/userSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/redux/user/userSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/services/api/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/services/api/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/containers/pages/auth/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/pages/auth/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/containers/pages/home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/containers/pages/home/index.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +25,83 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/containers/pages/Lists.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/containers/pages/ListDetails.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front/src/composents/AddTask.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/composents/AddList.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/composents/ListItem.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="61" column="138" selection-start-line="61" selection-start-column="138" selection-end-line="61" selection-end-column="138" />
+              <folding>
+                <element signature="e#0#90#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/config/lang/fr.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="12" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/config/lang/en.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -41,6 +114,7 @@
     <findStrings>
       <find>align</find>
       <find>span={6}</find>
+      <find>t</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -57,31 +131,34 @@
         <option value="$PROJECT_DIR$/front/src/containers/pages/home/index.js" />
         <option value="$PROJECT_DIR$/front/src/App.css" />
         <option value="$PROJECT_DIR$/front/src/App.js" />
-        <option value="$PROJECT_DIR$/front/src/containers/layout/index.js" />
         <option value="$PROJECT_DIR$/front/src/containers/pages/home/home.css" />
-        <option value="$PROJECT_DIR$/front/src/containers/pages/home/index.jsx" />
         <option value="$PROJECT_DIR$/front/public/_redirect" />
         <option value="$PROJECT_DIR$/front/src/composents/SpinnerCustom.jsx" />
-        <option value="$PROJECT_DIR$/front/src/composents/Banner/Banner.js" />
-        <option value="$PROJECT_DIR$/front/src/containers/pages/auth/Login.js" />
-        <option value="$PROJECT_DIR$/front/src/containers/pages/Lists.js" />
-        <option value="$PROJECT_DIR$/front/src/composents/AddList.jsx" />
-        <option value="$PROJECT_DIR$/front/src/composents/ListItem.jsx" />
         <option value="$PROJECT_DIR$/front/src/redux/list/listSlice.js" />
         <option value="$PROJECT_DIR$/front/src/redux/store.js" />
         <option value="$PROJECT_DIR$/front/src/redux/user/userSaga.js" />
-        <option value="$PROJECT_DIR$/front/src/composents/AddTask.jsx" />
-        <option value="$PROJECT_DIR$/front/src/containers/pages/ListDetails.js" />
         <option value="$PROJECT_DIR$/front/src/services/api/list.js" />
         <option value="$PROJECT_DIR$/front/src/redux/list/listSaga.js" />
+        <option value="$PROJECT_DIR$/front/src/composents/Banner/Banner.js" />
+        <option value="$PROJECT_DIR$/front/src/containers/layout/index.js" />
+        <option value="$PROJECT_DIR$/front/src/containers/pages/home/index.jsx" />
+        <option value="$PROJECT_DIR$/front/src/containers/pages/auth/Login.js" />
+        <option value="$PROJECT_DIR$/front/src/containers/pages/auth/register.js" />
+        <option value="$PROJECT_DIR$/front/src/containers/pages/Lists.js" />
+        <option value="$PROJECT_DIR$/front/src/composents/AddList.jsx" />
+        <option value="$PROJECT_DIR$/front/src/composents/ListItem.jsx" />
+        <option value="$PROJECT_DIR$/front/src/containers/pages/ListDetails.js" />
+        <option value="$PROJECT_DIR$/front/src/config/lang/fr.json" />
+        <option value="$PROJECT_DIR$/front/src/config/lang/en.json" />
+        <option value="$PROJECT_DIR$/front/src/composents/AddTask.jsx" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="70" />
-    <option name="y" value="79" />
-    <option name="width" value="1623" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="221" />
+    <option name="y" value="123" />
+    <option name="width" value="1477" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -99,6 +176,34 @@
               <item name="todo-liste-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="todo-liste-test" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-liste-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-liste-test" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-liste-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-liste-test" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="composents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-liste-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-liste-test" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo-liste-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo-liste-test" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -160,19 +265,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27755000" />
+    <option name="totallyTimeSpent" value="35371000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="221" y="123" width="1477" height="952" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2185645" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18618822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982087" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -180,10 +281,35 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18618822" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32982087" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="TypeScript" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -237,27 +363,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/containers/layout/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="50" column="3" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/containers/pages/home/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/home/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -302,61 +411,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/composents/Banner/Banner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/auth/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/composents/AddList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/services/API.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/Lists.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/composents/ListItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="77" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#90#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -395,16 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/ListDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="39" column="33" lean-forward="true" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/services/api/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -422,10 +471,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/composents/Banner/Banner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/config/lang/i18n.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/layout/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="27" column="11" lean-forward="true" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/home/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="74" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/auth/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="89" column="3" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/auth/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/Lists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/composents/ListItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="61" column="138" selection-start-line="61" selection-start-column="138" selection-end-line="61" selection-end-column="138" />
+          <folding>
+            <element signature="e#0#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/containers/pages/ListDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/composents/AddList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/config/lang/fr.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/config/lang/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/composents/AddTask.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="376">
+          <caret line="47" column="82" selection-start-line="47" selection-start-column="82" selection-end-line="47" selection-end-column="82" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

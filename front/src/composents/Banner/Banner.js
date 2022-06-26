@@ -30,7 +30,7 @@ export const Banner = ({title, subTitle, renderHeaderBar}) =>{
           }}
         />
         {renderHeaderBar()}
-        <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }} onClick={redirectHome}>
+        <TweenOne style={{cursor: 'pointer'}} className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }} onClick={redirectHome}>
           {title}
         </TweenOne>
         <TweenOne

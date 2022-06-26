@@ -58,23 +58,23 @@ export default function ListItem({item}) {
         <Collapse style={{width: "100%"}} accordion ghost>
             <Panel header={renderPanelHeader(item)} key="1">
                 <Tabs defaultActiveKey="1">
-                    <TabPane tab="Details" key="detailsKey">
-                        { item.endDate ? <p>Date de fin: {item.endDate.toString().split('T')[0]}</p> : <p>Pas de date de fin</p>}
-                        <p>Si une date de fin est défini un email sera envoyer 24h avant la fin</p>
+                    <TabPane tab={t('common.details')} key="detailsKey">
+                        { item.endDate ? <p>{t('list.date-end')}: {item.endDate.toString().split('T')[0]}</p> : <p>{t('list.no-end-date')}</p>}
+                        <p>{t('list.cron-details')}</p>
                     </TabPane>
-                    <TabPane tab="Update" key="updateKey">
+                    <TabPane tab={t('common.update')} key="updateKey">
                         <div>
                             <div style={{display: 'grid', maxWidth: 200}}>
                                 <Input value={title} placeholder="Title" onChange={(event) => setTitle(event.target.value)}/>
 
                                 <DatePicker style={{marginTop: 5}} value={moment(item.endDate)} onChange={onChangeDatePicker} placement="bottomRight"/>
                                 <Button style={{marginTop: 5}} type="primary" htmlType="submit" onClick={onFinish}>
-                                    Update
+                                    {t('common.update')}
                                 </Button>
                             </div>
                             <div>
                                 <Button type="danger" onClick={onDelete}>
-                                    Delete
+                                    {t('common.delete')}
                                 </Button>
                             </div>
                         </div>

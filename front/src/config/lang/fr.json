@@ -3,12 +3,25 @@
     "translate-button": "FR",
     "error404": "Erreur 404 vous allez être redirigé dans ",
     "error": "Une erreur est apparue",
-    "submit": "envoyer"
+    "submit": "envoyer",
+    "and": "et",
+    "delete": "Supprimer",
+    "update": "Modifier",
+    "details": "Détails",
+    "title": "titre",
+    "create": "créer",
+    "task": "tâche"
   },
   "user": {
     "email": "email",
     "firstname": "prénom",
     "lastname": "nom"
+  },
+  "navigation": {
+    "logout": "Déconnection",
+    "login": "Connexion",
+    "register": "Inscription",
+    "my-list": "Mes lists"
   },
   "auth": {
     "email-already-use": "Cet email est déjà utilisé",
@@ -19,5 +32,23 @@
     "unauthorized": "Access refusé veuillez vérifier vos informations",
     "error-check-email": "Nous n'avons pas pu valider votre email veuillez vérifier vos mails",
     "sendEmailVerification": "Envoyer un nouvel email de vérification"
+  },
+  "home": {
+    "welcome": "Bienvenue sur ce site de type Todo List",
+    "description": "Celui-ci à été réaliser dans le cadre d'un test technique\n<br/>\nCette solution permet de créer des listes et des tâches à effectuer",
+    "realisation": "Réalisation",
+    "backend-description": "Architecture API Domain Driven Development",
+    "backend-nodejs": "NodeJs et Express en Typescript",
+    "backend-swagger": "Utilisation de la librairie Tsoa et <a target={\"_blank\"} href={process.env.REACT_APP_API_URL + \"api-docs\"}>swagger pour la documentation API</a>",
+    "backend-typeorm": "Typeorm pour l'orm connecter à une base de donnée Postgres hébergé sur Google Cloud",
+    "frontend-description": "Architecture containers et components"
+  },
+  "list": {
+    "my-list": "Mes listes",
+    "date-end": "Date de fin",
+    "no-end-date": "Pas de date de fin",
+    "cron-details": "Si une date de fin est défini un email sera envoyer 24h avant la fin",
+    "add-list": "Ajouter une liste",
+    "add-task": "Ajouter une tâche"
   }
 }

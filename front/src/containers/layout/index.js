@@ -23,15 +23,15 @@ function LayoutDefault() {
     if (access_token) {
       return(
         <>
-          <Link to="/lists" style={{ marginLeft: 20}}>Mes lists</Link>
-          <Link to="/logout" style={{ marginLeft: 20}}>Logout</Link>
+          <Link to="/lists" style={{ marginLeft: 20}}>{t("navigation.my-list")}</Link>
+          <Link to="/logout" style={{ marginLeft: 20, color: 'red'}}>{t("navigation.logout")}</Link>
         </>
       )
     } else {
       return (
           <>
-            <Link to="/register" style={{ marginLeft: 20}}>Register</Link>
-            <Link to="/login" style={{ marginLeft: 20}}>Login</Link>
+            <Link to="/register" style={{ marginLeft: 20}}>{t('navigation.register')}</Link>
+            <Link to="/login" style={{ marginLeft: 20}}>{t('navigation.login')}</Link>
           </>
       )
     }

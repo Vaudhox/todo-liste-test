@@ -8,64 +8,56 @@ import {Col, Row, Divider} from "antd";
 import antDesignSvg from '../../../assets/antdesign.svg'
 import reactJsPng from '../../../assets/reactjs.png'
 import reduxPng from '../../../assets/redux.png'
+import { useTranslation } from 'react-i18next';
 
 
 export default function Home () {
-
+    const { t } = useTranslation();
     return (
         <div className="container padding">
             <div>
-                <h1>Bienvenue sur mon site de todo list</h1>
-                <div>Celui-ci à été réaliser dans le cadre d'un test technique</div>
-                <div>
-                    Cette solution permet de créer des listes et des tâches à effectuer, quelques fonctionnallité:
-                </div>
-                <br/>
-                <div className="container-list">
-                    <ul>
-                        <li>Connexion JWT et Refresh token</li>
-                        <li>Vérification email et envoie de mail avec Sendgrid</li>
-                        <li>Déploiment continue sur un VPS pour le backend et sur Netlify pour le front</li>
-                        <li>Multi-language</li>
-                    </ul>
-                </div>
-
+                <h1>{t('home.welcome')}</h1>
+                <div  dangerouslySetInnerHTML={
+                    {__html: t('home.description', {interpolation: {escapeValue: false}})}
+                } />
             </div>
             <div>
-                <h2>Réalisation</h2>
+                <h2>{t('home.realisation')}</h2>
                 <div className="space-children">
                     <h3>Backend</h3>
-                    <div>Architecture API Domain Driven Development</div>
-                    <Row justify="center" align="middle">
+                    <div>{t('home.backend-description')}</div>
+                    <Row justify="center" align="middle" gutter={16}>
                         <Col  xs={20} sm={20} md={6} lg={6} xl={6} >
                             <img src={nodeExpressPng} alt={"Node et Express"} />
                         </Col>
                         <Col  xs={20} sm={20} md={6} lg={6} xl={6} >
-                            <div>NodeJs et Express</div>
+                            <div>{t('home.backend-nodejs')}</div>
                         </Col>
                     </Row>
-                    <Row justify="center" align="middle">
+                    <Row justify="center" align="middle" gutter={16}>
                         <Col  xs={20} sm={20} md={6} lg={6} xl={6}>
-                            <div>Typescript avec Tsoa et <a target={"_blank"} href={process.env.REACT_APP_API_URL + "api-docs"}>swagger pour la documentation API</a></div>
+                            <div dangerouslySetInnerHTML={
+                                {__html: t('home.backend-swagger', {interpolation: {escapeValue: false}})}
+                            } />
                         </Col>
                         <Col xs={20} sm={20} md={6} lg={6} xl={6}>
                             <img src={swaggerPng} alt={"Tsoa et Typescript"} />
                         </Col>
                     </Row>
-                    <Row justify="center" align="middle">
+                    <Row justify="center" align="middle" gutter={16}>
                         <Col xs={20} sm={20} md={6} lg={6} xl={6}>
                             <img src={postgresTypeormPng} alt={"Typeorm et Postgres"} />
                         </Col>
                         <Col xs={20} sm={20} md={6} lg={6} xl={6}>
-                            <div>Typeorm pour l'orm connecter à une base de donnée Postgres héberger sur Heroku</div>
+                            <div>{t('home.backend-typeorm')}</div>
                         </Col>
                     </Row>
                 </div>
                 <Divider/>
                 <div className="space-children">
                     <h3>Frontend</h3>
-                    <div>Architecture containers et components</div>
-                    <Row justify="center" align="middle">
+                    <div>{t('home.frontend-description')}</div>
+                    <Row justify="center" align="middle" gutter={16}>
                         <Col xs={20} sm={20} md={6} lg={6} xl={6}>
                             <div>React</div>
                         </Col>
@@ -78,7 +70,7 @@ export default function Home () {
                             <img src={reduxPng} alt={"redux et redux-saga"} />
                         </Col>
                         <Col  xs={20} sm={20} md={6} lg={6} xl={6}>
-                            <div>Redux et Redux saga</div>
+                            <div>Redux {t('common.and')} Redux saga</div>
                         </Col>
                     </Row>
                     <Row justify="center" align="middle">

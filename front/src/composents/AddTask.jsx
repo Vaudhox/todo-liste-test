@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Form, Input, Button, Row, Col, List, Spin, Switch, Modal, notification } from 'antd';
-import { LoadingOutlined, PlusCircleFilled } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Input, Button, Row, Col, Switch, Modal, notification } from 'antd';
+import { PlusCircleFilled } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import { Capitalize, useQuery } from '../utils/index';
-import { useDispatch, useSelector } from 'react-redux';
+import { Capitalize } from '../utils/index';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 export default function AddTask ({styleIcon, style, listId}) {
@@ -36,7 +36,7 @@ export default function AddTask ({styleIcon, style, listId}) {
         <div style={style}>
             <PlusCircleFilled onClick={() => setShowModal(true)} style={styleIcon}/>
             <Modal
-                title="Add a task"
+                title={t('list.add-task')}
                 centered
                 closable
                 visible={showModal}
@@ -45,7 +45,7 @@ export default function AddTask ({styleIcon, style, listId}) {
             >
                 <Row justify="center" align="middle" gutter={16}>
                     <Col>
-                        <Input value={text} placeholder="Task" onChange={(event) => setText(event.target.value)}/>
+                        <Input value={text} placeholder={Capitalize(t('common.task'))} onChange={(event) => setText(event.target.value)}/>
                     </Col>
                     <Col>
                         <Switch onChange={(value) => setStatus(value)} />
@@ -53,7 +53,7 @@ export default function AddTask ({styleIcon, style, listId}) {
                 </Row>
                 <Row justify="center" align="middle" style={{marginTop: 10}} gutter={16}>
                     <Button type="primary" htmlType="submit" onClick={onFinish}>
-                        Create
+                        {Capitalize(t('common.create'))}
                     </Button>
                 </Row>
 

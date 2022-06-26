@@ -752,6 +752,42 @@
 					}
 				}
 			}
+		},
+		"/refresh": {
+			"post": {
+				"operationId": "RefreshToken",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserAuthDto"
+								},
+								"examples": {
+									"Example 1": {
+										"value": {
+											"id": "46638910-ae86-42be-bc6e-b5bc8ae76592",
+											"email": "test",
+											"emailConfirm": false,
+											"firstName": "azea",
+											"lastName": "azaza",
+											"token": "eznkjnezkjnez",
+											"refreshToken": "ezaeazeazeaz",
+											"expireToken": "zeazeazea"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": []
+			}
 		}
 	},
 	"servers": [

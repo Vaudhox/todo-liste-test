@@ -138,6 +138,28 @@ export class UserController extends Controller {
         return userAuthDto
     }
 
+    @Post("/refresh")
+    @SuccessResponse("200", "Success")
+    @Example<UserAuthDto>({
+        id: "46638910-ae86-42be-bc6e-b5bc8ae76592",
+        email: "test",
+        emailConfirm: false,
+        firstName: "azea",
+        lastName: "azaza",
+        token: "eznkjnezkjnez",
+        refreshToken: "ezaeazeazeaz",
+        expireToken: "zeazeazea"
+      })
+    async refreshToken(@Request() request: any): Promise<UserAuthDto> {
+        const refreshToken = request.headers["refresh-token"]
+        if (refreshToken) {
+            const userAuthDto:UserAuthDto =  await this.authService.refresh(refreshToken)
+            return userAuthDto
+        } else {
+            throw new ServerError('Unauthorize', 401)
+        }
+    }
+
 /*
     @Get("/iam")
     @Security("bearerAuth")

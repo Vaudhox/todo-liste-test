@@ -3,6 +3,7 @@ import { MoreThan, IsNull, Not } from 'typeorm';
 import  DB from "../../common/database";
 import * as luxon from "luxon";
 import {sendEmailReminderList} from "../../common/services/mailer"
+import { configService } from '../../config/config.service';
 
 export default class WorkerCron {
 
@@ -10,7 +11,7 @@ export default class WorkerCron {
     private userRepository;
     private listRepository;
     constructor() {
-        this.queue = new Queue("list will expored", { redis: { port: 6379, host: '127.0.0.1', password: 'foobared' }});
+        this.queue = new Queue("list will expored", { redis: { port: 6379, host: '127.0.0.1', password: configService.getValue("REDIS_PASSWORD") }});
         this.userRepository = DB.getUserRepository()
         this.listRepository = DB.getListRepository()
         this.queue.process(async (job, done) => {

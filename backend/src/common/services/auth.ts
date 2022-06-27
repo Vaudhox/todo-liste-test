@@ -48,7 +48,7 @@ export class AuthService {
     }
 
     async refresh(refreshToken: string): Promise<UserAuthDto> {
-        jwtService.verify(refreshToken,{secret: this.jwtConstants.refreshToken})
+        jwtService.verify(refreshToken, this.jwtConstants.refreshToken)
         const tokenDecoded = await jwtService.decode(refreshToken);
         let user = await this.usersService.findOneBy({id: tokenDecoded["id"]});
         if (user.refreshToken === refreshToken ) {

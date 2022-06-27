@@ -36,4 +36,7 @@ export class ListEntity {
 
     @ManyToOne(type => UserEntity, user => user.lists)
     owner: UserEntity;
+    
+    @Column({ type: 'boolean', nullable: false, default: false})
+    reminder: boolean;
 }

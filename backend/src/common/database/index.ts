@@ -3,6 +3,7 @@ import { ListEntity } from "../../lists/entity/lists.entity";
 import AppDataSource from "../../config/ormconfig"
 import { UserEntity } from "../../users/entity/users.entity"
 import { TaskEntity } from "../../tasks/entity/tasks.entity";
+import WorkerCron from "../services/cron";
 
 class DB {
     private _connection = AppDataSource;
@@ -11,6 +12,8 @@ class DB {
             .initialize()
             .then(() => {
                 console.log("BDD connection has been initialized!")
+                const worker = new WorkerCron();
+                worker.start();
             })
             .catch((err) => {
                 console.error("Error BDD connection initialization:", err)

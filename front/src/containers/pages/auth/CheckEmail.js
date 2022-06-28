@@ -2,17 +2,12 @@ import { Form, Input, Button, Row, Spin, Col, notification  } from 'antd';
 import { Capitalize, useQuery } from '../../../utils';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import API from '../../../services/API';
-import { useNavigate  } from "react-router-dom";
-import { LoadingOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import 'antd/dist/antd.css';
-
-
-const antIcon = <LoadingOutlined style={{ fontSize: 75, color: "chocolate" }} spin />;
+import SpinnerCustom from "../../../composents/SpinnerCustom";
 
 function CheckYourEmail() {
-   
+
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const query = useQuery();
@@ -58,7 +53,7 @@ function CheckYourEmail() {
           value={email}
           onChange={onChange}
         />
-        <Button type="primary" htmlType="submit" onClick={SendEmail}>
+        <Button style={{marginTop: 10}} type="primary" htmlType="submit" onClick={SendEmail}>
           {Capitalize(t('auth.sendEmailVerification'))}
         </Button>
       </>
@@ -66,9 +61,9 @@ function CheckYourEmail() {
   }
   return(
     <Row justify="center" align="middle">
-      <Col span={12} offset={6}>
+      <Col span={12}>
         {
-          load ? <Spin size='large' indicator={antIcon} /> : renderInputAskEmail()
+          load ? <SpinnerCustom /> : renderInputAskEmail()
         }
       </Col>
     </Row>

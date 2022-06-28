@@ -35,9 +35,7 @@ function Register() {
               span: 20
             }} sm={20} md={6} lg={6} xl={6}>
               <Form
-                  name="basic"
-                  labelCol={{ span: 8 }}
-                  wrapperCol={{ span: 16 }}
+                  name="register"
                   onFinish={onFinish}
                   autoComplete="off"
               >

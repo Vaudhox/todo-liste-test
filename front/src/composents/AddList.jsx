@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import { Capitalize } from '../utils/index';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import moment from 'moment';
 
 export default function AddList ({styleIcon, style}) {
 
@@ -56,8 +57,15 @@ export default function AddList ({styleIcon, style}) {
 
                 <Input value={title} placeholder={Capitalize(t('common.title'))} onChange={(event) => setTitle(event.target.value)}/>
 
-                <DatePicker onChange={onChangeDatePicker} placement="bottomRight"/>
-                <Button type="primary" htmlType="submit" onClick={onFinish}>
+                <DatePicker
+                    style={{marginTop: 10}}
+                    onChange={onChangeDatePicker}
+                    placement="bottomRight"
+                    disabledDate={(current) => {
+                        return moment().add(-1, 'days')  >= current
+                    }}
+                />
+                <Button style={{marginTop: 10}} type="primary" htmlType="submit" onClick={onFinish}>
                     {Capitalize(t('common.submit'))}
                 </Button>
             </Modal>

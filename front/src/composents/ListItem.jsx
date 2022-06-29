@@ -67,7 +67,14 @@ export default function ListItem({item}) {
                             <div style={{display: 'grid', maxWidth: 200}}>
                                 <Input value={title} placeholder="Title" onChange={(event) => setTitle(event.target.value)}/>
 
-                                <DatePicker style={{marginTop: 5}} value={moment(item.endDate)} onChange={onChangeDatePicker} placement="bottomRight"/>
+                                <DatePicker
+                                    style={{marginTop: 5}}
+                                    value={moment(item.endDate)}
+                                    onChange={onChangeDatePicker}
+                                    disabledDate={(current) => {
+                                        return moment().add(-1, 'days')  >= current
+                                    }}
+                                    placement="bottomRight"/>
                                 <Button style={{marginTop: 5}} type="primary" htmlType="submit" onClick={onFinish}>
                                     {t('common.update')}
                                 </Button>

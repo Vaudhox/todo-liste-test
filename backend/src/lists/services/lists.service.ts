@@ -39,6 +39,9 @@ export default class ListService {
         if (list.owner.id === user.id) {
             const endDate = new Date(listDto.endDate)
             list.title = listDto.title;
+            if (endDate != list.endDate && list.reminder) {
+                list.reminder = false
+            }
             list.endDate = endDate;
             const listSave = await this.listRepository.save(list)
             return listSave

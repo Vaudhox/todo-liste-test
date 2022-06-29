@@ -51,7 +51,8 @@ export default class WorkerCron {
     }
 
     public start(): void {
-        this.queue.add({data: "cron"}, { repeat: { cron: '25 10 * * *' } });
+        //H-2 pour l'heure de Paris
+        this.queue.add({data: "cron"}, { repeat: { cron: '30 8 * * *' } }); // 10h30
     }
 
           

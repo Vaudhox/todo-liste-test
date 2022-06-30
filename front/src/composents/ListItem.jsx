@@ -45,7 +45,7 @@ export default function ListItem({item}) {
 
     const renderPanelHeader = (item) => {
         return (
-            <h4 onClick={() => navigate('/list/' + item.id)}>{item.title}</h4>
+            <h4 className="list-title"  onClick={() => navigate('/list/' + item.id)}>{item.title}</h4>
         )
     }
 

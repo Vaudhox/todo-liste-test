@@ -69,7 +69,7 @@ export default function ListItem({item}) {
 
                                 <DatePicker
                                     style={{marginTop: 5}}
-                                    value={moment(item.endDate)}
+                                    value={moment(endDate)}
                                     onChange={onChangeDatePicker}
                                     disabledDate={(current) => {
                                         return moment().add(-1, 'days')  >= current

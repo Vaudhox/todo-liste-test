@@ -40,7 +40,7 @@
     "backend-description": "Architecture API Domain Driven Development",
     "backend-nodejs": "NodeJs et Express en Typescript",
     "backend-swagger": "Utilisation de la librairie Tsoa et <a target={\"_blank\"} href={process.env.REACT_APP_API_URL + \"api-docs\"}>swagger pour la documentation API</a>",
-    "backend-typeorm": "Typeorm pour l'orm connecter à une base de données PostgresSQL hébergé sur Google Cloud",
+    "backend-typeorm": "Typeorm pour l'orm connecté à une base de données PostgresSQL hébergé sur Google Cloud",
     "frontend-description": "Architecture containers et components"
   },
   "list": {
